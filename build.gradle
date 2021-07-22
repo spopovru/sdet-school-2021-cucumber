@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.nspk'
+version '0.0.1'
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = 11
+    System.setProperty("file.encoding", "UTF-8")
+    options.encoding("UTF-8")
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.10.4'
+    implementation group: 'io.cucumber', name: 'cucumber-testng', version: '6.10.4'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+}
+
+test {
+    systemProperties System.getProperties()
+    testLogging.showStandardStreams = true
+    ignoreFailures = true
+    include('**/Test*Runner*')
+    useTestNG()
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'ru.nspk.demo.test.steps', 'src/test/resources/features']
+        }
+    }
+}
