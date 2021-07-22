@@ -25,7 +25,7 @@ public class CalculatorSteps {
         calculator.executeAddition();
     }
 
-    @Когда("^выполнена операция сложения чисел (.+) и (.+)")
+    @Когда("^выполнена операция сложения чисел (.+) и (.+)$")
     public void executeAddition(Double argument1, Double argument2) {
         calculator.executeAddition(argument1, argument2);
     }
