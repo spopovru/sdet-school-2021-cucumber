@@ -14,7 +14,7 @@ public class Calculator {
     private Double argument2 = null;
     @Getter
     private Double result;
-
+				
     public void executeAddition() {
         checkArguments();
         result = getArgument1() + getArgument2();
@@ -27,7 +27,7 @@ public class Calculator {
 
     public void executeMultiplication() {
         checkArguments();
-        result = getArgument1() * getArgument2();
+	    result = getArgument1() * getArgument2();
     }
 
     public void executeDivision() {

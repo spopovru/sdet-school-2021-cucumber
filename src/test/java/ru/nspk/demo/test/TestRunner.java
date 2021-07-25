@@ -6,10 +6,12 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import org.testng.annotations.Test;
 
+
+
 @CucumberOptions(
         features = { "src/test/resources/features" },
         glue = { "ru.nspk.demo.test.steps" },
-        tags = "@addition"
+        tags = "@addition or @multiplication or @division or @subtraction"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
