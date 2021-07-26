@@ -30,6 +30,16 @@ public class Calculator {
         result = getArgument1() * getArgument2();
     }
 
+    public boolean executeAfterMultiplication(Double expectedResult) {
+        executeMultiplication();
+        return Math.abs(result - expectedResult) < 0.000001;
+    }
+
+    public boolean executeAfterDivision(Double expectedResult) {
+        executeDivision();
+        return Math.abs(result - expectedResult) < 0.000001;
+    }
+    
     public void executeDivision() {
         checkArguments();
         assertNotEquals(getArgument2(), 0.0, "При делении второй аргумент не может быть нулём");
