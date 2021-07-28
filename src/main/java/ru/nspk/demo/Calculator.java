@@ -29,16 +29,6 @@ public class Calculator {
         checkArguments();
         result = getArgument1() * getArgument2();
     }
-
-    public boolean executeAfterMultiplication(Double expectedResult) {
-        executeMultiplication();
-        return Math.abs(result - expectedResult) < 0.000001;
-    }
-
-    public boolean executeAfterDivision(Double expectedResult) {
-        executeDivision();
-        return Math.abs(result - expectedResult) < 0.000001;
-    }
     
     public void executeDivision() {
         checkArguments();
