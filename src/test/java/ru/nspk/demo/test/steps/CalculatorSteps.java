@@ -36,10 +36,10 @@ public class CalculatorSteps {
     }
 
     @Когда("выполнена операция умножения")
-    public void выполненаОперацияУмножения() { calculator.executeMultiplication(); }
+    public void executeMultiplication() { calculator.executeMultiplication(); }
 
     @Когда("выполнена операция деления")
-    public void выполненаОперацияДеления() { calculator.executeDivision();}
+    public void executeDivision() { calculator.executeDivision();}
 }
 
 
