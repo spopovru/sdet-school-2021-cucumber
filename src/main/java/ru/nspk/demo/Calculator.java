@@ -29,7 +29,7 @@ public class Calculator {
         checkArguments();
         result = getArgument1() * getArgument2();
     }
-
+    
     public void executeDivision() {
         checkArguments();
         assertNotEquals(getArgument2(), 0.0, "При делении второй аргумент не может быть нулём");

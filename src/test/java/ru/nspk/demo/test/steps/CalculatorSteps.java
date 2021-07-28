@@ -35,6 +35,11 @@ public class CalculatorSteps {
         Assert.assertEquals(calculator.getResult(), exceptedResult);
     }
 
+    @Когда("выполнена операция умножения")
+    public void executeMultiplication() { calculator.executeMultiplication(); }
+
+    @Когда("выполнена операция деления")
+    public void executeDivision() { calculator.executeDivision();}
 }
 
 
