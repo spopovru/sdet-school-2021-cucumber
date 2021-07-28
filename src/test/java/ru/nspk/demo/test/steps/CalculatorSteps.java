@@ -35,16 +35,6 @@ public class CalculatorSteps {
         Assert.assertEquals(calculator.getResult(), exceptedResult);
     }
 
-    @Тогда("результат умножения равен {double}")
-    public void assertCurrentMultiplyResult(Double exceptedResult) {
-        Assert.assertEquals(calculator.executeAfterMultiplication(exceptedResult), true);
-    }
-
-    @Тогда("результат деления равен {double}")
-    public void assertCurrentDivisionResult(Double exceptedResult) {
-        Assert.assertEquals(calculator.executeAfterDivision(exceptedResult), true);
-    }
-
     @Когда("выполнена операция умножения")
     public void выполненаОперацияУмножения() { calculator.executeMultiplication(); }
 
